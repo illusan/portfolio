@@ -7,6 +7,17 @@ body {
     background-color: black;
 }
 
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background-color: #74A0D1;
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+}
+
 header {
     top: 0;
     text-align: center;
@@ -162,12 +173,50 @@ nav a {
     align-items: center;
 }
 
-.about-me-right a{
+.skills-container {
+    border: 1px solid rgba(211, 211, 211, 0.15);
+    background-color: rgba(16, 15, 23, 0.7);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.skills-container > a {
     text-decoration: none;
     color: white;
-    border: 1px solid rgba(211, 211, 211, 0.15);
-    padding: 10px 70px;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill-box {
+    border: 1px solid rgba(211, 211, 211, 0.15);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    transition: all 0.3s;
+    cursor: default;
+}
+
+.skill-box:hover {
+    background-color: rgba(116, 160, 209, 0.2);
+    border-color: #74A0D1;
+    transform: translateY(-2px);
 }
 
 #projects { 
