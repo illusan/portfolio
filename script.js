@@ -40,3 +40,20 @@ window.addEventListener('scroll', function() {
     let scrolled = (winScroll / height) * 100;
     document.getElementById("myBar").style.width = scrolled + "%";
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    const elements = document.querySelectorAll('.about-me-left, .about-me-right, .contact-left, .contact-right');
+
+    elements.forEach((el) => observer.observe(el));
+});

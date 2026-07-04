@@ -35,6 +35,9 @@ header {
     border: 1px solid rgba(211, 211, 211, 0.15);
     backdrop-filter: blur(10px);
     background-color: rgba(16, 15, 23, 0.7);
+
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
 }
 
 header a {
@@ -111,6 +114,9 @@ nav a {
     text-align: center;
     font-size: 40px;
     font-weight: bold;
+
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.8s forwards;
 }
 
 .text-about {
@@ -122,6 +128,9 @@ nav a {
     width: 50%;
     padding: 5px 0;
     text-align: center;
+
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
 }
 
 .name {
@@ -163,6 +172,10 @@ nav a {
     text-align: left;
     padding-right: 5%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    opacity: 0;
+    transform: translateX(-100px); 
+    transition: all 0.8s ease-out;
 }
 
 .about-me-right {
@@ -171,6 +184,10 @@ nav a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease-out;
 }
 
 .skills-container {
@@ -246,6 +263,10 @@ nav a {
     display: flex;
     justify-content: flex-start;
     box-sizing: border-box;
+
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s ease-out;
 }
 
 .contact-right {
@@ -257,6 +278,10 @@ nav a {
     justify-content: center;
     padding-left: 25%;
     box-sizing: border-box;
+
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease-out;
 }
 
 .contact-right a {
@@ -306,4 +331,64 @@ nav a {
     background-position: left bottom;
     color: black;
     border-color: #74A0D1;
+}
+
+#footer{
+    min-height: 10vh !important;
+    padding-top: 25px !important;
+    align-items: start !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    border-top: 1px solid rgba(211, 211, 211, 0.15);
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+    background-color: #0c0a14;
+}
+
+.footer-left{
+    color: white;
+
+}
+
+.footer-right{
+    color: white;
+    opacity: 50%;
+
+}
+
+ @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-me-left.show,
+.about-me-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contact-left.show,
+.contact-right.show {
+    opacity: 1;
+    transform: translateX(0);
 }
