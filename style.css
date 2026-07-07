@@ -245,6 +245,71 @@ nav a {
     padding: 0 10%;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-left{
+    width: 32%;
+    height: 60vh;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+    border: 1px solid rgba(211, 211, 211, 0.15);
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px rgba(116, 160, 209, 0.15);
+    transition: all 0.3s ease-out;
+}
+
+.project-middle{
+    width: 32%;
+    height: 60vh;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+    border: 1px solid rgba(211, 211, 211, 0.15);
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px rgba(116, 160, 209, 0.15);
+    transition: all 0.3s ease-out;
+}
+
+.project-right{
+    width: 32%;
+    height: 60vh;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+    border: 1px solid rgba(211, 211, 211, 0.15);
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px rgba(116, 160, 209, 0.15);
+    transition: all 0.3s ease-out;
+}
+
+.project-left:hover{
+    box-shadow: 1px 1px 5px rgba(116, 160, 209, 0.25); 
+    transform: translateY(2px); 
+
+}
+
+.project-middle:hover{
+    box-shadow: 1px 1px 5px rgba(116, 160, 209, 0.25); 
+    transform: translateY(2px); 
+}
+
+.project-right:hover{
+    box-shadow: 1px 1px 5px rgba(116, 160, 209, 0.25); 
+    transform: translateY(2px); 
 }
 
 #contact {
