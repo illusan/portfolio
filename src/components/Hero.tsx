@@ -3,7 +3,6 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import { Fade } from '@animate-ui/react/primitives/effects/fade'
 import { Slide } from '@animate-ui/react/primitives/effects/slide'
 import { Magnetic } from '@animate-ui/react/primitives/effects/magnetic'
-import { Tilt, TiltContent } from '@animate-ui/react/primitives/effects/tilt'
 import { RotatingText, RotatingTextContainer } from '@animate-ui/react/primitives/texts/rotating'
 import { useI18n } from '../i18n'
 import { Container, LINKS } from './ui'
@@ -96,22 +95,16 @@ export function Hero() {
         </div>
 
         <Fade delay={300} className="order-1 mx-auto w-full max-w-[220px] sm:max-w-[280px] md:order-2 md:max-w-[340px]">
-          <Tilt maxTilt={8} className="relative">
-            <div
-              className="absolute -inset-6 rounded-[2.5rem] bg-accent/20 blur-3xl"
-              aria-hidden="true"
+          <div className="overflow-hidden rounded-[2rem] border border-line-strong bg-surface shadow-2xl shadow-black/50">
+            <img
+              src={photo}
+              alt={t.hero.photoAlt}
+              width={400}
+              height={400}
+              className="aspect-square w-full object-cover"
+              fetchPriority="high"
             />
-            <TiltContent className="relative overflow-hidden rounded-[2rem] border border-line-strong bg-surface shadow-2xl shadow-black/50">
-              <img
-                src={photo}
-                alt={t.hero.photoAlt}
-                width={400}
-                height={400}
-                className="aspect-square w-full object-cover"
-                fetchPriority="high"
-              />
-            </TiltContent>
-          </Tilt>
+          </div>
         </Fade>
       </Container>
     </section>

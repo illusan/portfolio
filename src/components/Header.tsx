@@ -1,6 +1,6 @@
 import { Highlight, HighlightItem } from '@animate-ui/react/primitives/effects/highlight'
 import { ToggleGroup } from '@animate-ui/react/primitives/radix-ui/toggle-group'
-import { useI18n, type Lang } from '../i18n'
+import { dictionaries, useI18n, type Lang } from '../i18n'
 import { useActiveSection, SECTION_IDS, type SectionId } from '../hooks/useActiveSection'
 
 const NAV_KEYS = {
@@ -35,9 +35,27 @@ function LanguageToggle() {
   )
 }
 
-function NavLinks({ active, compact = false }: { active: SectionId; compact?: boolean }) {
-  const { t } = useI18n()
+// Obie wersje językowe leżą na sobie w jednej komórce siatki, więc szerokość
+// linku to zawsze ta dłuższa i pasek nie zmienia rozmiaru po zmianie języka
+function NavLabel({ id }: { id: SectionId }) {
+  const { lang } = useI18n()
 
+  return (
+    <span className="inline-grid">
+      {(Object.keys(dictionaries) as Lang[]).map((code) => (
+        <span
+          key={code}
+          aria-hidden={code !== lang}
+          className={`col-start-1 row-start-1 ${code === lang ? '' : 'invisible'}`}
+        >
+          {dictionaries[code].nav[NAV_KEYS[id]]}
+        </span>
+      ))}
+    </span>
+  )
+}
+
+function NavLinks({ active, compact = false }: { active: SectionId; compact?: boolean }) {
   return (
     <Highlight
       value={active}
@@ -55,7 +73,7 @@ function NavLinks({ active, compact = false }: { active: SectionId; compact?: bo
             } ${active === id ? 'text-fg' : 'text-muted hover:text-fg'}`}
           >
             {!compact && <span className="text-accent"># </span>}
-            {t.nav[NAV_KEYS[id]]}
+            <NavLabel id={id} />
           </a>
         </HighlightItem>
       ))}

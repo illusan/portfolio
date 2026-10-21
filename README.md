@@ -10,7 +10,6 @@ Personal portfolio of Jakub Serafin, Applied Computer Science student at Jagiell
 - Tailwind CSS 4
 - [Animate UI](https://animate-ui.com) + Motion for animations
 - English / Polish language switch
-- Deployed to GitHub Pages via GitHub Actions
 
 ## Run locally
 

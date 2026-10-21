@@ -6,7 +6,6 @@ export const LINKS = {
   github: 'https://github.com/illusan',
   githubHandle: 'illusan',
   linkedin: 'https://www.linkedin.com/in/jakub-serafin-7503413b1/',
-  nailxspot: 'https://nailxspot.vercel.app/',
 }
 
 export function Container({ children, className = '' }: { children: ReactNode; className?: string }) {

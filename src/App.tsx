@@ -9,13 +9,10 @@ import { Contact } from './components/Contact'
 import { Container } from './components/ui'
 
 function Footer() {
-  const { t } = useI18n()
-
   return (
     <footer className="border-t border-line pt-8 pb-28 md:pb-10">
       <Container className="flex flex-col gap-2 font-mono text-xs text-subtle sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} Jakub Serafin</p>
-        <p>{t.footer.built}</p>
       </Container>
     </footer>
   )

@@ -49,21 +49,32 @@ const en = {
     heading: 'Selected work',
     featured: 'Featured',
     stackLabel: 'Tech stack',
-    live: 'Live',
     nailxspot: {
-      subtitle: 'Online booking system for a nail studio',
+      subtitle: 'Booking website for a nail studio',
+      status: 'In daily use',
       description:
-        'A website for a nail artist in Chełm where clients pick a free date and time, choose a service and attach an inspiration photo, with no phone calls needed. The owner manages slots and bookings in a private admin panel that updates in real time.',
-      features: [
-        'Availability calendar with hourly slots',
-        "Race-safe booking: one PostgreSQL function reserves the slot in a single transaction, so two clients can't take the same hour",
-        'Inspiration photo upload to Supabase Storage',
-        'Admin panel with authentication and real-time updates',
-        'Mobile-first design, deployed on Vercel with security headers',
+        'A website I built for a nail artist in Chełm. Clients use it every day to book appointments online instead of calling or writing messages, and the owner manages everything from her own admin panel.',
+      sectionsTitle: "What's on the site",
+      sections: [
+        { name: '#start', text: 'A short introduction of the studio and the artist.' },
+        {
+          name: '#zapisy',
+          text: 'The booking form: a calendar that shows only free days, available hours, a list of services, contact details, an optional note and an inspiration photo.',
+        },
+        { name: '#portfolio', text: "A gallery of finished nails taken from the studio's Instagram." },
+        {
+          name: 'admin panel',
+          text: 'A login-protected page where the owner adds free slots and sees every booking with the attached photo.',
+        },
       ],
-      demo: 'Live demo',
-      privateCode: 'Source code available on request',
-      shotDesktopAlt: 'nailxspot home page on desktop',
+      howTitle: 'How it works',
+      steps: [
+        'The owner adds free dates and hours in the admin panel.',
+        'A client picks one of them in the calendar and fills in the form.',
+        'The booking is saved in the database and the hour disappears from the calendar, so nobody else can take it.',
+        "The new booking appears in the owner's panel right away.",
+      ],
+      shotDesktopAlt: 'nailxspot portfolio section on desktop with an Instagram post of finished nails',
       shotMobileAlt: 'nailxspot booking form on a phone with a selected date and time slot',
     },
     more: {
@@ -79,9 +90,6 @@ const en = {
     cta: 'Send an email',
     copy: 'Copy email address',
     copied: 'Copied!',
-  },
-  footer: {
-    built: 'Built with React, Tailwind CSS & Animate UI',
   },
 }
 
@@ -134,21 +142,32 @@ const pl: Dict = {
     heading: 'Wybrane projekty',
     featured: 'Wyróżniony',
     stackLabel: 'Technologie',
-    live: 'Online',
     nailxspot: {
-      subtitle: 'System rezerwacji online dla salonu paznokci',
+      subtitle: 'Strona do zapisów dla stylistki paznokci',
+      status: 'W codziennym użyciu',
       description:
-        'Strona dla stylistki paznokci z Chełma, na której klientki wybierają wolny termin i godzinę, usługę oraz dodają zdjęcie inspiracji, bez dzwonienia. Właścicielka zarządza terminami i rezerwacjami w prywatnym panelu administracyjnym, który odświeża się na bieżąco.',
-      features: [
-        'Kalendarz dostępności z godzinowymi terminami',
-        'Bezpieczna rezerwacja: jedna funkcja PostgreSQL zajmuje termin w jednej transakcji, więc dwie klientki nie zarezerwują tej samej godziny',
-        'Przesyłanie zdjęć inspiracji do Supabase Storage',
-        'Panel administracyjny z logowaniem i aktualizacjami w czasie rzeczywistym',
-        'Projekt mobile-first, wdrożony na Vercel z nagłówkami bezpieczeństwa',
+        'Strona, którą zrobiłem dla stylistki paznokci z Chełma. Klientki codziennie zapisują się przez nią na wizyty zamiast dzwonić czy pisać wiadomości, a właścicielka zarządza wszystkim we własnym panelu administracyjnym.',
+      sectionsTitle: 'Co jest na stronie',
+      sections: [
+        { name: '#start', text: 'Krótkie przedstawienie salonu i stylistki.' },
+        {
+          name: '#zapisy',
+          text: 'Formularz rezerwacji: kalendarz pokazujący tylko wolne dni, dostępne godziny, lista usług, dane kontaktowe, opcjonalna notatka i zdjęcie inspiracji.',
+        },
+        { name: '#portfolio', text: 'Galeria gotowych stylizacji pobierana z Instagrama salonu.' },
+        {
+          name: 'panel admina',
+          text: 'Strona chroniona logowaniem, na której właścicielka dodaje wolne terminy i widzi wszystkie rezerwacje razem z dołączonymi zdjęciami.',
+        },
       ],
-      demo: 'Zobacz na żywo',
-      privateCode: 'Kod źródłowy udostępniam na prośbę',
-      shotDesktopAlt: 'Strona główna nailxspot na komputerze',
+      howTitle: 'Jak to działa',
+      steps: [
+        'Właścicielka dodaje wolne dni i godziny w panelu admina.',
+        'Klientka wybiera jeden z nich w kalendarzu i wypełnia formularz.',
+        'Rezerwacja zapisuje się w bazie danych, a godzina znika z kalendarza, więc nikt inny jej nie zajmie.',
+        'Nowa rezerwacja od razu pojawia się w panelu właścicielki.',
+      ],
+      shotDesktopAlt: 'Sekcja portfolio nailxspot na komputerze z postem z Instagrama',
       shotMobileAlt: 'Formularz rezerwacji nailxspot na telefonie z wybraną datą i godziną',
     },
     more: {
@@ -165,12 +184,9 @@ const pl: Dict = {
     copy: 'Skopiuj adres e-mail',
     copied: 'Skopiowano!',
   },
-  footer: {
-    built: 'Zbudowane w React, Tailwind CSS i Animate UI',
-  },
 }
 
-const dictionaries: Record<Lang, Dict> = { en, pl }
+export const dictionaries: Record<Lang, Dict> = { en, pl }
 const STORAGE_KEY = 'lang'
 
 function readStoredLang(): Lang {
