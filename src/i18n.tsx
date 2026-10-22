@@ -54,8 +54,8 @@ const en = {
       subtitle: 'Booking website for a nail studio',
       status: 'In daily use',
       description:
-        'A website I built for a nail artist in Chełm. Clients use it every day to book appointments online instead of calling or writing messages, and the owner manages everything from her own admin panel.',
-      sectionsTitle: "What's on the site",
+        'A website I built for a nail artist. Clients use it every day to book appointments online instead of calling or writing messages, and the owner manages everything from her own admin panel.',
+      sectionsTitle: "What you'll find on the site",
       sections: [
         { name: '#start', text: 'A short introduction of the studio and the artist.' },
         {
@@ -148,8 +148,8 @@ const pl: Dict = {
       subtitle: 'Strona do zapisów dla stylistki paznokci',
       status: 'W codziennym użyciu',
       description:
-        'Strona, którą zrobiłem dla stylistki paznokci z Chełma. Klientki codziennie zapisują się przez nią na wizyty zamiast dzwonić czy pisać wiadomości, a właścicielka zarządza wszystkim we własnym panelu administracyjnym.',
-      sectionsTitle: 'Co jest na stronie',
+        'Strona, którą zrobiłem dla stylistki paznokci. Klientki codziennie zapisują się przez nią na wizyty zamiast dzwonić czy pisać wiadomości, a właścicielka zarządza wszystkim we własnym panelu administracyjnym.',
+      sectionsTitle: 'Co znajduje się na stronie',
       sections: [
         { name: '#start', text: 'Krótkie przedstawienie salonu i stylistki.' },
         {
