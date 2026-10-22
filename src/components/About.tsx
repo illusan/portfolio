@@ -1,4 +1,4 @@
-import { Award, GraduationCap, Languages, MapPin, Database } from 'lucide-react'
+import { Award, GraduationCap, Languages, MapPin, Database, Trophy } from 'lucide-react'
 import { SiCss, SiHtml5, SiPython } from 'react-icons/si'
 import type { CSSProperties } from 'react'
 import type { IconType } from 'react-icons'
@@ -14,7 +14,7 @@ const SKILLS: { name: string; icon: IconType | typeof Database; color: string }[
   { name: 'CSS', icon: SiCss, color: '#8f6bd8' },
 ]
 
-const FACT_ICONS = [GraduationCap, Award, Languages, MapPin]
+const FACT_ICONS = [GraduationCap, Award, Trophy, Languages, MapPin]
 
 export function About() {
   const { t } = useI18n()

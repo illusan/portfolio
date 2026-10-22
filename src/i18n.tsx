@@ -31,8 +31,8 @@ const en = {
     title: 'about-me',
     heading: 'Curious, eager to learn and open to new challenges',
     paragraphs: [
-      'I study Applied Computer Science at Jagiellonian University and hold the IT technician (programmer) qualification, which I earned at a technical secondary school.',
-      'I am curious about new things and learn best by building my own projects. My latest one, nailxspot, is a booking website that a nail studio uses every day.',
+      'I study Applied Computer Science at Jagiellonian University. I hold the title of IT technician (programmer), earned at a technical secondary school, and the Young Innovator title in IT and telecommunications.',
+      'I am curious about new things and I work well in a team. I learn best by building my own projects. My latest one, nailxspot, is a booking website that a nail studio uses every day.',
       "I'm now starting to expand my skills in JavaScript. I'm looking for an internship or a job on a contract of mandate (umowa zlecenie) and I'm open to any proposals where I can learn and work with a team.",
     ],
     skillsTitle: 'Skills',
@@ -40,6 +40,7 @@ const en = {
     facts: [
       { label: 'Education', value: 'Applied Computer Science, Jagiellonian University', note: '2025 – present' },
       { label: 'Qualification', value: 'IT technician – programmer', note: 'Technical secondary school' },
+      { label: 'Award', value: 'Young Innovator in IT and telecommunications', note: 'Polski Związek Stowarzyszeń Wynalazców i Racjonalizatorów' },
       { label: 'Languages', value: 'Polish – native', note: 'English – B1/B1+' },
       { label: 'Location', value: 'Kraków, Poland', note: '' },
     ],
@@ -124,8 +125,8 @@ const pl: Dict = {
     title: 'o-mnie',
     heading: 'Ciekawy nowych rzeczy i otwarty na współpracę',
     paragraphs: [
-      'Studiuję Informatykę Stosowaną na Uniwersytecie Jagiellońskim. Mam tytuł technika programisty, który zdobyłem w technikum.',
-      'Jestem ciekawy nowych rzeczy i najlepiej uczę się, robiąc własne projekty. Mój ostatni projekt, nailxspot, to strona do zapisów, z której codziennie korzysta salon paznokci.',
+      'Studiuję Informatykę Stosowaną na Uniwersytecie Jagiellońskim. Posiadam tytuł technika programisty, zdobyty w technikum, oraz tytuł Młodego Innowatora w dziedzinie informatyki i telekomunikacji.',
+      'Jestem ciekawy nowych rzeczy i dobrze odnajduję się w pracy zespołowej. Najlepiej uczę się, robiąc własne projekty. Mój ostatni projekt, nailxspot, to strona do zapisów, z której codziennie korzysta salon paznokci.',
       'Obecnie zaczynam poszerzać umiejętności w JavaScripcie. Szukam stażu lub pracy na umowę zlecenie i jestem otwarty na propozycje, w których będę mógł się uczyć i współpracować z zespołem.',
     ],
     skillsTitle: 'Umiejętności',
@@ -133,6 +134,7 @@ const pl: Dict = {
     facts: [
       { label: 'Edukacja', value: 'Informatyka Stosowana, Uniwersytet Jagielloński', note: '2025 – obecnie' },
       { label: 'Kwalifikacje', value: 'Technik programista', note: 'Technikum' },
+      { label: 'Wyróżnienie', value: 'Młody Innowator w dziedzinie informatyki i telekomunikacji', note: 'Polski Związek Stowarzyszeń Wynalazców i Racjonalizatorów' },
       { label: 'Języki', value: 'Polski – ojczysty', note: 'Angielski – B1/B1+' },
       { label: 'Lokalizacja', value: 'Kraków', note: '' },
     ],
