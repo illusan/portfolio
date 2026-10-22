@@ -156,8 +156,8 @@ export function Projects() {
               copy={ai}
               stack={['HTML', 'CSS', 'JavaScript', 'Chrome Extensions API', 'Groq API']}
               shots={[
-                { src: shot('ai-reviewer-start.jpg'), alt: ai.shotStartAlt, width: 600, height: 1100 },
                 { src: shot('ai-reviewer-loading.jpg'), alt: ai.shotLoadingAlt, width: 600, height: 1100 },
+                { src: shot('ai-reviewer-result.jpg'), alt: ai.shotResultAlt, width: 600, height: 1100 },
               ]}
               repo={{ href: LINKS.aiReviewer, label: ai.repo }}
             />
