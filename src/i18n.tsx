@@ -78,6 +78,34 @@ const en = {
       shotHomeAlt: 'nailxspot home page on a phone',
       shotBookingAlt: 'nailxspot booking form on a phone with a selected date and time slot',
     },
+    aiReviewer: {
+      subtitle: 'Chrome extension that summarizes product reviews with AI',
+      status: 'Chrome extension',
+      description:
+        'A browser extension that saves time when shopping online. On a product page it reads the customer reviews and, within a few seconds, turns them into a short summary of 3–4 points.',
+      sectionsTitle: "What you'll find in the extension",
+      sections: [
+        { name: 'popup', text: 'A small window with a short instruction and a button that starts the analysis.' },
+        {
+          name: 'summary',
+          text: 'A clear verdict when most customers recommend or advise against the product, mixed opinions merged into one fair point, and proportions such as "most" or "some".',
+        },
+        {
+          name: 'API key',
+          text: 'The key is not stored in the repository. Everyone adds their own Groq key before installing.',
+        },
+      ],
+      howTitle: 'How it works',
+      steps: [
+        'You open a product page and scroll down to the reviews.',
+        'After clicking the button, the extension reads the text of the page and skips menus, headers and footers.',
+        'The text is sent to a language model through the Groq API.',
+        'The summary appears in the extension window.',
+      ],
+      shotStartAlt: 'AI Opinion Reviewer window with instructions and the analyze button',
+      shotLoadingAlt: 'AI Opinion Reviewer window while the reviews are being analyzed',
+      repo: 'View code on GitHub',
+    },
     more: {
       title: 'More projects on the way',
       text: "I'm working on new projects. In the meantime, my GitHub has university assignments and smaller experiments.",
@@ -171,6 +199,34 @@ const pl: Dict = {
       ],
       shotHomeAlt: 'Strona główna nailxspot na telefonie',
       shotBookingAlt: 'Formularz rezerwacji nailxspot na telefonie z wybraną datą i godziną',
+    },
+    aiReviewer: {
+      subtitle: 'Rozszerzenie do Chrome, które podsumowuje opinie o produktach za pomocą AI',
+      status: 'Rozszerzenie Chrome',
+      description:
+        'Wtyczka do przeglądarki, która oszczędza czas podczas zakupów online. Na stronie produktu czyta opinie klientów i w kilka sekund zamienia je w krótkie podsumowanie w 3–4 punktach.',
+      sectionsTitle: 'Co znajduje się w rozszerzeniu',
+      sections: [
+        { name: 'okienko', text: 'Małe okno z krótką instrukcją i przyciskiem, który uruchamia analizę.' },
+        {
+          name: 'podsumowanie',
+          text: 'Wyraźny werdykt, gdy większość klientów poleca lub odradza produkt, sprzeczne opinie połączone w jeden obiektywny punkt i proporcje typu „większość” czy „część”.',
+        },
+        {
+          name: 'klucz API',
+          text: 'Klucz nie jest zapisany w repozytorium. Każdy dodaje własny klucz Groq przed instalacją.',
+        },
+      ],
+      howTitle: 'Jak to działa',
+      steps: [
+        'Otwierasz stronę produktu i przewijasz do opinii.',
+        'Po kliknięciu przycisku rozszerzenie odczytuje tekst strony, pomijając menu, nagłówki i stopki.',
+        'Tekst trafia do modelu językowego przez Groq API.',
+        'Podsumowanie pojawia się w okienku rozszerzenia.',
+      ],
+      shotStartAlt: 'Okno AI Opinion Reviewer z instrukcją i przyciskiem analizy',
+      shotLoadingAlt: 'Okno AI Opinion Reviewer podczas analizy opinii',
+      repo: 'Zobacz kod na GitHubie',
     },
     more: {
       title: 'Kolejne projekty w drodze',

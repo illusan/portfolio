@@ -6,6 +6,7 @@ export const LINKS = {
   github: 'https://github.com/illusan',
   githubHandle: 'illusan',
   linkedin: 'https://www.linkedin.com/in/jakub-serafin-7503413b1/',
+  aiReviewer: 'https://github.com/illusan/AI-Opinion-Reviewer',
 }
 
 export function Container({ children, className = '' }: { children: ReactNode; className?: string }) {
