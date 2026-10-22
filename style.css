@@ -99,19 +99,17 @@ html[lang="pl"] [data-lang="en"] {
     display: none;
 }
 
-/* W menu i na przyciskach obie wersje leżą na sobie (druga jest niewidoczna),
-   więc przycisk ma zawsze szerokość dłuższego tekstu i nie skacze przy zmianie języka */
-.same-width {
+/* W menu obie wersje leżą na sobie, więc menu ma zawsze tę samą szerokość */
+.nav-label {
     display: inline-grid;
-    justify-items: center;
 }
 
-.same-width > span {
+.nav-label > span {
     grid-area: 1 / 1;
 }
 
-html[lang="en"] .same-width [data-lang="pl"],
-html[lang="pl"] .same-width [data-lang="en"] {
+html[lang="en"] .nav-label [data-lang="pl"],
+html[lang="pl"] .nav-label [data-lang="en"] {
     display: inline;
     visibility: hidden;
 }
@@ -979,30 +977,15 @@ h2 {
 
 /* Przycisk kopiowania: po kliknięciu ikonka zmienia się na ptaszek */
 .copy-button .check-icon,
-.copy-button.copied .copy-icon {
+.copy-button .copied-label,
+.copy-button.copied .copy-icon,
+.copy-button.copied .copy-label {
     display: none;
 }
 
-.copy-button.copied .check-icon {
-    display: inline;
-}
-
-/* „Skopiuj” i „Skopiowano!” też leżą na sobie, żeby przycisk nie zmieniał szerokości po kliknięciu */
-.copy-text {
-    display: inline-grid;
-}
-
-.copy-text > span {
-    grid-area: 1 / 1;
-}
-
-.copy-button .copied-label,
-.copy-button.copied .copy-label {
-    visibility: hidden;
-}
-
+.copy-button.copied .check-icon,
 .copy-button.copied .copied-label {
-    visibility: visible;
+    display: inline;
 }
 
 .copy-button .check-icon {
