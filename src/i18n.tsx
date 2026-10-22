@@ -75,8 +75,8 @@ const en = {
         'The booking is saved in the database and the hour disappears from the calendar, so nobody else can take it.',
         "The new booking appears in the owner's panel right away.",
       ],
-      shotDesktopAlt: 'nailxspot portfolio section on desktop with an Instagram post of finished nails',
-      shotMobileAlt: 'nailxspot booking form on a phone with a selected date and time slot',
+      shotHomeAlt: 'nailxspot home page on a phone',
+      shotBookingAlt: 'nailxspot booking form on a phone with a selected date and time slot',
     },
     more: {
       title: 'More projects on the way',
@@ -169,8 +169,8 @@ const pl: Dict = {
         'Rezerwacja zapisuje się w bazie danych, a godzina znika z kalendarza, więc nikt inny jej nie zajmie.',
         'Nowa rezerwacja od razu pojawia się w panelu właścicielki.',
       ],
-      shotDesktopAlt: 'Sekcja portfolio nailxspot na komputerze z postem z Instagrama',
-      shotMobileAlt: 'Formularz rezerwacji nailxspot na telefonie z wybraną datą i godziną',
+      shotHomeAlt: 'Strona główna nailxspot na telefonie',
+      shotBookingAlt: 'Formularz rezerwacji nailxspot na telefonie z wybraną datą i godziną',
     },
     more: {
       title: 'Kolejne projekty w drodze',

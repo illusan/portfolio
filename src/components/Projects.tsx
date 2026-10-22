@@ -1,7 +1,6 @@
 import { FolderGit2 } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa6'
 import { Slide } from '@animate-ui/react/primitives/effects/slide'
-import { Tilt, TiltContent } from '@animate-ui/react/primitives/effects/tilt'
 import { useI18n } from '../i18n'
 import { Container, LINKS, SectionHeading, Tag } from './ui'
 
@@ -9,22 +8,6 @@ const NAILXSPOT_STACK = ['HTML', 'CSS', 'JavaScript', 'Supabase', 'SQL', 'Vercel
 
 // Ścieżki względne do /public, żeby działały pod dowolnym base URL
 const shot = (file: string) => `${import.meta.env.BASE_URL}projects/${file}`
-
-function BrowserFrame({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="overflow-hidden rounded-xl border border-line-strong bg-surface-2 shadow-2xl shadow-black/50">
-      <div className="flex items-center gap-1.5 border-b border-line px-3 py-2.5" aria-hidden="true">
-        <span className="size-2.5 rounded-full bg-white/15" />
-        <span className="size-2.5 rounded-full bg-white/15" />
-        <span className="size-2.5 rounded-full bg-white/15" />
-        <span className="ml-3 truncate rounded-md bg-white/5 px-3 py-0.5 font-mono text-[11px] text-subtle">
-          nailxspot · #portfolio
-        </span>
-      </div>
-      <img src={src} alt={alt} width={1440} height={900} loading="lazy" className="block w-full" />
-    </div>
-  )
-}
 
 function PhoneFrame({ src, alt }: { src: string; alt: string }) {
   return (
@@ -46,14 +29,12 @@ export function Projects() {
         <Slide inView direction="up" offset={32}>
           <article className="overflow-hidden rounded-3xl border border-line bg-surface/60">
             <div className="grid lg:grid-cols-[1.1fr_1fr]">
-              <div className="relative order-1 overflow-hidden border-b border-line bg-gradient-to-br from-accent/15 via-transparent to-transparent p-6 pb-10 sm:p-10 sm:pb-14 lg:order-2 lg:border-b-0 lg:border-l">
-                <Tilt maxTilt={5} className="relative">
-                  <TiltContent>
-                    <BrowserFrame src={shot('nailxspot-portfolio.jpg')} alt={p.shotDesktopAlt} />
-                  </TiltContent>
-                </Tilt>
-                <div className="absolute right-4 bottom-4 w-[28%] max-w-[150px] sm:right-6 sm:bottom-6">
-                  <PhoneFrame src={shot('nailxspot-mobile-booking.webp')} alt={p.shotMobileAlt} />
+              <div className="order-1 flex items-center justify-center gap-4 border-b border-line bg-gradient-to-br from-accent/15 via-transparent to-transparent px-6 py-10 sm:gap-6 sm:px-10 sm:py-14 lg:order-2 lg:border-b-0 lg:border-l">
+                <div className="w-1/2 max-w-[220px]">
+                  <PhoneFrame src={shot('nailxspot-mobile-home.jpg')} alt={p.shotHomeAlt} />
+                </div>
+                <div className="w-1/2 max-w-[220px] translate-y-6 sm:translate-y-10">
+                  <PhoneFrame src={shot('nailxspot-mobile-booking.webp')} alt={p.shotBookingAlt} />
                 </div>
               </div>
 
