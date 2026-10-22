@@ -2,20 +2,15 @@
 
 Personal portfolio of Jakub Serafin, Applied Computer Science student at Jagiellonian University.
 
-![Preview](public/og.png)
+![Preview](assets/og.png)
 
-## Stack
+## Built with
 
-- React 19 + TypeScript, built with Vite
-- Tailwind CSS 4
-- [Animate UI](https://animate-ui.com) + Motion for animations
+- HTML, CSS and JavaScript (no frameworks, no build step)
+- Icons: [Lucide](https://lucide.dev) and [Font Awesome](https://fontawesome.com)
+- Fonts: Inter and JetBrains Mono (Google Fonts)
 - English / Polish language switch
 
 ## Run locally
 
-```bash
-npm install
-npm run dev
-```
-
-Production build: `npm run build` (output in `dist/`).
+Open `index.html` in the browser.

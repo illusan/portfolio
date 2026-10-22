@@ -1,26 +1,466 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jakub Serafin — Applied Computer Science student</title>
-    <meta
-      name="description"
-      content="Portfolio of Jakub Serafin, Applied Computer Science student at Jagiellonian University in Kraków. Projects, skills and contact."
-    />
-    <meta name="author" content="Jakub Serafin" />
-    <meta name="theme-color" content="#0a0a10" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="description" content="Portfolio of Jakub Serafin, Applied Computer Science student at Jagiellonian University in Kraków. Projects, skills and contact.">
+    <meta name="author" content="Jakub Serafin">
+    <meta name="theme-color" content="#0a0a10">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jakub Serafin — Applied Computer Science student">
+    <meta property="og:description" content="Applied Computer Science student at Jagiellonian University. Projects, skills and contact.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Jakub Serafin — Applied Computer Science student" />
-    <meta
-      property="og:description"
-      content="Applied Computer Science student at Jagiellonian University. Projects, skills and contact."
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Czcionki: Inter (tekst) i JetBrains Mono (akcenty) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+    <!-- Ikony marek (GitHub, LinkedIn, Python...) z Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Ustawia język od razu, żeby strona nie mignęła po angielsku, gdy ktoś wybrał polski -->
+    <script>
+        try {
+            if (localStorage.getItem('lang') === 'pl') {
+                document.documentElement.lang = 'pl';
+            }
+        } catch (e) {}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">
+        <span data-lang="en">Skip to content</span><span data-lang="pl">Przejdź do treści</span>
+    </a>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="background" aria-hidden="true">
+        <div class="background-grid"></div>
+        <div class="background-glow"></div>
+    </div>
+
+    <!-- ===== NAGŁÓWEK ===== -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#start" class="logo"><span class="accent">~/</span>jakub</a>
+
+            <nav class="nav nav-desktop" data-label-en="Main navigation" data-label-pl="Główna nawigacja" aria-label="Main navigation">
+                <div class="nav-slider"></div>
+                <a href="#start" class="nav-link"><span class="accent"># </span><span class="nav-label"><span data-lang="en">home</span><span data-lang="pl">start</span></span></a>
+                <a href="#about-me" class="nav-link"><span class="accent"># </span><span class="nav-label"><span data-lang="en">about-me</span><span data-lang="pl">o-mnie</span></span></a>
+                <a href="#projects" class="nav-link"><span class="accent"># </span><span class="nav-label"><span data-lang="en">projects</span><span data-lang="pl">projekty</span></span></a>
+                <a href="#contact" class="nav-link"><span class="accent"># </span><span class="nav-label"><span data-lang="en">contact</span><span data-lang="pl">kontakt</span></span></a>
+            </nav>
+
+            <div class="lang-toggle" role="group" data-label-en="Change language" data-label-pl="Zmień język" aria-label="Change language">
+                <span class="lang-pill" aria-hidden="true"></span>
+                <button type="button" class="lang-button" data-set-lang="en" aria-label="English">EN</button>
+                <button type="button" class="lang-button" data-set-lang="pl" aria-label="Polski">PL</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Na telefonie nawigacja jest na dole ekranu, w zasięgu kciuka -->
+    <nav class="nav nav-mobile" data-label-en="Main navigation" data-label-pl="Główna nawigacja" aria-label="Main navigation">
+        <div class="nav-slider"></div>
+        <a href="#start" class="nav-link"><span class="nav-label"><span data-lang="en">home</span><span data-lang="pl">start</span></span></a>
+        <a href="#about-me" class="nav-link"><span class="nav-label"><span data-lang="en">about-me</span><span data-lang="pl">o-mnie</span></span></a>
+        <a href="#projects" class="nav-link"><span class="nav-label"><span data-lang="en">projects</span><span data-lang="pl">projekty</span></span></a>
+        <a href="#contact" class="nav-link"><span class="nav-label"><span data-lang="en">contact</span><span data-lang="pl">kontakt</span></span></a>
+    </nav>
+
+    <main id="main">
+        <!-- ===== START ===== -->
+        <section id="start" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="status enter" style="--delay: 100ms">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span data-lang="en">Open to internships &amp; contract work</span>
+                        <span data-lang="pl">Szukam stażu lub pracy na umowę zlecenie</span>
+                    </p>
+
+                    <h1 class="enter" style="--delay: 200ms">
+                        <span class="hello"><span data-lang="en">Hi, I'm</span><span data-lang="pl">Cześć, jestem</span></span>
+                        <span class="name">Jakub Serafin</span>
+                    </h1>
+
+                    <p class="build enter" style="--delay: 320ms">
+                        <span data-lang="en">I build</span><span data-lang="pl">Tworzę</span>
+                        <span class="rotating" id="rotatingText"
+                              data-words-en="web applications|booking systems|Python tools|responsive interfaces"
+                              data-words-pl="aplikacje webowe|systemy rezerwacji|narzędzia w Pythonie|responsywne interfejsy">web applications</span>
+                    </p>
+
+                    <p class="lead enter" style="--delay: 440ms">
+                        <span data-lang="en">Second-year Applied Computer Science student at Jagiellonian University in Kraków. Curious about new things, eager to learn and happy to work with others.</span>
+                        <span data-lang="pl">Student drugiego roku Informatyki Stosowanej na Uniwersytecie Jagiellońskim w Krakowie. Ciekawy nowych rzeczy, chętny do nauki i do współpracy.</span>
+                    </p>
+
+                    <div class="hero-actions enter" style="--delay: 560ms">
+                        <a href="#projects" class="button button-primary magnetic">
+                            <span data-lang="en">View projects</span><span data-lang="pl">Zobacz projekty</span>
+                            <i data-lucide="arrow-right" class="icon icon-move"></i>
+                        </a>
+                        <a href="#contact" class="button button-outline">
+                            <i data-lucide="mail" class="icon"></i>
+                            <span data-lang="en">Get in touch</span><span data-lang="pl">Napisz do mnie</span>
+                        </a>
+                        <div class="socials">
+                            <a href="https://github.com/illusan" target="_blank" rel="noreferrer" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/jakub-serafin-7503413b1/" target="_blank" rel="noreferrer" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-photo enter" style="--delay: 300ms">
+                    <img src="assets/jakub.webp" width="400" height="400" fetchpriority="high"
+                         alt="Jakub Serafin standing in front of a mountain landscape"
+                         data-alt-en="Jakub Serafin standing in front of a mountain landscape"
+                         data-alt-pl="Jakub Serafin na tle górskiego krajobrazu">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== O MNIE ===== -->
+        <section id="about-me" class="section">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="section-label">## <span data-lang="en">about-me</span><span data-lang="pl">o-mnie</span></p>
+                    <h2>
+                        <span data-lang="en">Curious, eager to learn and open to new challenges</span>
+                        <span data-lang="pl">Ciekawy nowych rzeczy i otwarty na współpracę</span>
+                    </h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>
+                            <span data-lang="en">I study Applied Computer Science at Jagiellonian University. I hold the title of IT technician (programmer), earned at a technical secondary school, and the Young Innovator title in IT and telecommunications.</span>
+                            <span data-lang="pl">Studiuję Informatykę Stosowaną na Uniwersytecie Jagiellońskim. Posiadam tytuł technika programisty, zdobyty w technikum, oraz tytuł Młodego Innowatora w dziedzinie informatyki i telekomunikacji.</span>
+                        </p>
+                        <p>
+                            <span data-lang="en">I am curious about new things and I work well in a team. I learn best by building my own projects. My latest one, nailxspot, is a booking website that a nail studio uses every day.</span>
+                            <span data-lang="pl">Jestem ciekawy nowych rzeczy i dobrze odnajduję się w pracy zespołowej. Najlepiej uczę się, robiąc własne projekty. Mój ostatni projekt, nailxspot, to strona do zapisów, z której codziennie korzysta salon paznokci.</span>
+                        </p>
+                        <p>
+                            <span data-lang="en">I'm now starting to expand my skills in JavaScript. I'm looking for an internship or a job on a contract of mandate (umowa zlecenie) and I'm open to any proposals where I can learn and work with a team.</span>
+                            <span data-lang="pl">Obecnie zaczynam poszerzać umiejętności w JavaScripcie. Szukam stażu lub pracy na umowę zlecenie i jestem otwarty na propozycje, w których będę mógł się uczyć i współpracować z zespołem.</span>
+                        </p>
+
+                        <h3 class="small-title"><span data-lang="en">Skills</span><span data-lang="pl">Umiejętności</span></h3>
+                        <ul class="skills">
+                            <li class="skill skill-python"><i class="fa-brands fa-python"></i>Python</li>
+                            <li class="skill skill-sql"><i data-lucide="database" class="icon"></i>SQL</li>
+                            <li class="skill skill-html"><i class="fa-brands fa-html5"></i>HTML</li>
+                            <li class="skill skill-css"><i class="fa-brands fa-css3-alt"></i>CSS</li>
+                        </ul>
+                    </div>
+
+                    <div class="facts reveal">
+                        <h3 class="visually-hidden"><span data-lang="en">Quick facts</span><span data-lang="pl">W skrócie</span></h3>
+                        <div class="fact">
+                            <div class="fact-icon"><i data-lucide="graduation-cap" class="icon"></i></div>
+                            <div>
+                                <p class="fact-label"><span data-lang="en">Education</span><span data-lang="pl">Edukacja</span></p>
+                                <p class="fact-value"><span data-lang="en">Applied Computer Science, Jagiellonian University</span><span data-lang="pl">Informatyka Stosowana, Uniwersytet Jagielloński</span></p>
+                                <p class="fact-note"><span data-lang="en">2025 – present</span><span data-lang="pl">2025 – obecnie</span></p>
+                            </div>
+                        </div>
+                        <div class="fact">
+                            <div class="fact-icon"><i data-lucide="award" class="icon"></i></div>
+                            <div>
+                                <p class="fact-label"><span data-lang="en">Qualification</span><span data-lang="pl">Kwalifikacje</span></p>
+                                <p class="fact-value"><span data-lang="en">IT technician – programmer</span><span data-lang="pl">Technik programista</span></p>
+                                <p class="fact-note"><span data-lang="en">Technical secondary school</span><span data-lang="pl">Technikum</span></p>
+                            </div>
+                        </div>
+                        <div class="fact">
+                            <div class="fact-icon"><i data-lucide="trophy" class="icon"></i></div>
+                            <div>
+                                <p class="fact-label"><span data-lang="en">Award</span><span data-lang="pl">Wyróżnienie</span></p>
+                                <p class="fact-value"><span data-lang="en">Young Innovator in IT and telecommunications</span><span data-lang="pl">Młody Innowator w dziedzinie informatyki i telekomunikacji</span></p>
+                                <p class="fact-note">Polski Związek Stowarzyszeń Wynalazców i Racjonalizatorów</p>
+                            </div>
+                        </div>
+                        <div class="fact">
+                            <div class="fact-icon"><i data-lucide="languages" class="icon"></i></div>
+                            <div>
+                                <p class="fact-label"><span data-lang="en">Languages</span><span data-lang="pl">Języki</span></p>
+                                <p class="fact-value"><span data-lang="en">Polish – native</span><span data-lang="pl">Polski – ojczysty</span></p>
+                                <p class="fact-note"><span data-lang="en">English – B1+/B2</span><span data-lang="pl">Angielski – B1+/B2</span></p>
+                            </div>
+                        </div>
+                        <div class="fact">
+                            <div class="fact-icon"><i data-lucide="map-pin" class="icon"></i></div>
+                            <div>
+                                <p class="fact-label"><span data-lang="en">Location</span><span data-lang="pl">Lokalizacja</span></p>
+                                <p class="fact-value"><span data-lang="en">Kraków, Poland</span><span data-lang="pl">Kraków</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJEKTY ===== -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="section-label">## <span data-lang="en">projects</span><span data-lang="pl">projekty</span></p>
+                    <h2><span data-lang="en">Selected work</span><span data-lang="pl">Wybrane projekty</span></h2>
+                </div>
+
+                <!-- Projekt 1: nailxspot -->
+                <article class="project reveal">
+                    <div class="project-top">
+                        <div class="project-shots">
+                            <div class="shot">
+                                <img src="assets/projects/nailxspot-mobile-home.jpg" width="390" height="844" loading="lazy"
+                                     alt="nailxspot home page on a phone"
+                                     data-alt-en="nailxspot home page on a phone"
+                                     data-alt-pl="Strona główna nailxspot na telefonie">
+                            </div>
+                            <div class="shot shot-lower">
+                                <img src="assets/projects/nailxspot-mobile-booking.webp" width="390" height="844" loading="lazy"
+                                     alt="nailxspot booking form on a phone with a selected date and time slot"
+                                     data-alt-en="nailxspot booking form on a phone with a selected date and time slot"
+                                     data-alt-pl="Formularz rezerwacji nailxspot na telefonie z wybraną datą i godziną">
+                            </div>
+                        </div>
+
+                        <div class="project-info">
+                            <div class="badges">
+                                <span class="badge badge-accent"><span data-lang="en">Featured</span><span data-lang="pl">Wyróżniony</span></span>
+                                <span class="badge badge-success">
+                                    <span class="status-dot status-dot-small" aria-hidden="true"></span>
+                                    <span data-lang="en">In daily use</span><span data-lang="pl">W codziennym użyciu</span>
+                                </span>
+                            </div>
+
+                            <h3 class="project-title">nailxspot</h3>
+                            <p class="project-subtitle"><span data-lang="en">Booking website for a nail studio</span><span data-lang="pl">Strona do zapisów dla stylistki paznokci</span></p>
+                            <p class="project-description">
+                                <span data-lang="en">A website I built for a nail artist. Clients use it every day to book appointments online instead of calling or writing messages, and the owner manages everything from her own admin panel.</span>
+                                <span data-lang="pl">Strona, którą zrobiłem dla stylistki paznokci. Klientki codziennie zapisują się przez nią na wizyty zamiast dzwonić czy pisać wiadomości, a właścicielka zarządza wszystkim we własnym panelu administracyjnym.</span>
+                            </p>
+
+                            <h4 class="small-title"><span data-lang="en">What you'll find on the site</span><span data-lang="pl">Co znajduje się na stronie</span></h4>
+                            <dl class="features">
+                                <div class="feature">
+                                    <dt>#start</dt>
+                                    <dd><span data-lang="en">A short introduction of the studio and the artist.</span><span data-lang="pl">Krótkie przedstawienie salonu i stylistki.</span></dd>
+                                </div>
+                                <div class="feature">
+                                    <dt>#zapisy</dt>
+                                    <dd><span data-lang="en">The booking form: a calendar that shows only free days, available hours, a list of services, contact details, an optional note and an inspiration photo.</span><span data-lang="pl">Formularz rezerwacji: kalendarz pokazujący tylko wolne dni, dostępne godziny, lista usług, dane kontaktowe, opcjonalna notatka i zdjęcie inspiracji.</span></dd>
+                                </div>
+                                <div class="feature">
+                                    <dt>#portfolio</dt>
+                                    <dd><span data-lang="en">A gallery of finished nails taken from the studio's Instagram.</span><span data-lang="pl">Galeria gotowych stylizacji pobierana z Instagrama salonu.</span></dd>
+                                </div>
+                                <div class="feature">
+                                    <dt><span data-lang="en">admin panel</span><span data-lang="pl">panel admina</span></dt>
+                                    <dd><span data-lang="en">A login-protected page where the owner adds free slots and sees every booking with the attached photo.</span><span data-lang="pl">Strona chroniona logowaniem, na której właścicielka dodaje wolne terminy i widzi wszystkie rezerwacje razem z dołączonymi zdjęciami.</span></dd>
+                                </div>
+                            </dl>
+
+                            <div class="project-bottom">
+                                <ul class="tags" data-label-en="Tech stack" data-label-pl="Technologie" aria-label="Tech stack">
+                                    <li class="tag">HTML</li>
+                                    <li class="tag">CSS</li>
+                                    <li class="tag">JavaScript</li>
+                                    <li class="tag">Supabase</li>
+                                    <li class="tag">SQL</li>
+                                    <li class="tag">Vercel</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-steps">
+                        <h4 class="small-title"><span data-lang="en">How it works</span><span data-lang="pl">Jak to działa</span></h4>
+                        <ol class="steps">
+                            <li class="step"><span class="step-number">01</span><p><span data-lang="en">The owner adds free dates and hours in the admin panel.</span><span data-lang="pl">Właścicielka dodaje wolne dni i godziny w panelu admina.</span></p></li>
+                            <li class="step"><span class="step-number">02</span><p><span data-lang="en">A client picks one of them in the calendar and fills in the form.</span><span data-lang="pl">Klientka wybiera jeden z nich w kalendarzu i wypełnia formularz.</span></p></li>
+                            <li class="step"><span class="step-number">03</span><p><span data-lang="en">The booking is saved in the database and the hour disappears from the calendar, so nobody else can take it.</span><span data-lang="pl">Rezerwacja zapisuje się w bazie danych, a godzina znika z kalendarza, więc nikt inny jej nie zajmie.</span></p></li>
+                            <li class="step"><span class="step-number">04</span><p><span data-lang="en">The new booking appears in the owner's panel right away.</span><span data-lang="pl">Nowa rezerwacja od razu pojawia się w panelu właścicielki.</span></p></li>
+                        </ol>
+                    </div>
+                </article>
+
+                <!-- Projekt 2: AI Opinion Reviewer -->
+                <article class="project reveal">
+                    <div class="project-top">
+                        <div class="project-shots">
+                            <div class="shot">
+                                <img src="assets/projects/ai-reviewer-loading.jpg" width="600" height="1100" loading="lazy"
+                                     alt="AI Opinion Reviewer window while the reviews are being analyzed"
+                                     data-alt-en="AI Opinion Reviewer window while the reviews are being analyzed"
+                                     data-alt-pl="Okno AI Opinion Reviewer podczas analizy opinii">
+                            </div>
+                            <div class="shot shot-lower">
+                                <img src="assets/projects/ai-reviewer-result.jpg" width="600" height="1100" loading="lazy"
+                                     alt="AI Opinion Reviewer window with a summary of Google reviews of a KFC restaurant"
+                                     data-alt-en="AI Opinion Reviewer window with a summary of Google reviews of a KFC restaurant"
+                                     data-alt-pl="Okno AI Opinion Reviewer z podsumowaniem opinii Google o restauracji KFC">
+                            </div>
+                        </div>
+
+                        <div class="project-info">
+                            <div class="badges">
+                                <span class="badge"><i class="fa-brands fa-chrome"></i><span data-lang="en">Chrome extension</span><span data-lang="pl">Rozszerzenie Chrome</span></span>
+                            </div>
+
+                            <h3 class="project-title">AI Opinion Reviewer</h3>
+                            <p class="project-subtitle"><span data-lang="en">Chrome extension that summarizes product reviews with AI</span><span data-lang="pl">Rozszerzenie do Chrome, które podsumowuje opinie o produktach za pomocą AI</span></p>
+                            <p class="project-description">
+                                <span data-lang="en">A browser extension that saves time when shopping online. On a product page it reads the customer reviews and, within a few seconds, turns them into a short summary of 3–4 points.</span>
+                                <span data-lang="pl">Wtyczka do przeglądarki, która oszczędza czas podczas zakupów online. Na stronie produktu czyta opinie klientów i w kilka sekund zamienia je w krótkie podsumowanie w 3–4 punktach.</span>
+                            </p>
+
+                            <h4 class="small-title"><span data-lang="en">What you'll find in the extension</span><span data-lang="pl">Co znajduje się w rozszerzeniu</span></h4>
+                            <dl class="features">
+                                <div class="feature">
+                                    <dt><span data-lang="en">popup</span><span data-lang="pl">okienko</span></dt>
+                                    <dd><span data-lang="en">A small window with a short instruction and a button that starts the analysis.</span><span data-lang="pl">Małe okno z krótką instrukcją i przyciskiem, który uruchamia analizę.</span></dd>
+                                </div>
+                                <div class="feature">
+                                    <dt><span data-lang="en">summary</span><span data-lang="pl">podsumowanie</span></dt>
+                                    <dd><span data-lang="en">A clear verdict when most customers recommend or advise against the product, mixed opinions merged into one fair point, and proportions such as "most" or "some".</span><span data-lang="pl">Wyraźny werdykt, gdy większość klientów poleca lub odradza produkt, sprzeczne opinie połączone w jeden obiektywny punkt i proporcje typu „większość” czy „część”.</span></dd>
+                                </div>
+                                <div class="feature">
+                                    <dt><span data-lang="en">API key</span><span data-lang="pl">klucz API</span></dt>
+                                    <dd><span data-lang="en">The key is not stored in the repository. Everyone adds their own Groq key before installing.</span><span data-lang="pl">Klucz nie jest zapisany w repozytorium. Każdy dodaje własny klucz Groq przed instalacją.</span></dd>
+                                </div>
+                            </dl>
+
+                            <div class="project-bottom">
+                                <ul class="tags" data-label-en="Tech stack" data-label-pl="Technologie" aria-label="Tech stack">
+                                    <li class="tag">HTML</li>
+                                    <li class="tag">CSS</li>
+                                    <li class="tag">JavaScript</li>
+                                    <li class="tag">Chrome Extensions API</li>
+                                    <li class="tag">Groq API</li>
+                                </ul>
+                                <a href="https://github.com/illusan/AI-Opinion-Reviewer" target="_blank" rel="noreferrer" class="button button-outline button-small">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span data-lang="en">View code on GitHub</span><span data-lang="pl">Zobacz kod na GitHubie</span>
+                                    <i data-lucide="arrow-up-right" class="icon icon-muted icon-move-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-steps">
+                        <h4 class="small-title"><span data-lang="en">How it works</span><span data-lang="pl">Jak to działa</span></h4>
+                        <ol class="steps">
+                            <li class="step"><span class="step-number">01</span><p><span data-lang="en">You open a product page and scroll down to the reviews.</span><span data-lang="pl">Otwierasz stronę produktu i przewijasz do opinii.</span></p></li>
+                            <li class="step"><span class="step-number">02</span><p><span data-lang="en">After clicking the button, the extension reads the text of the page and skips menus, headers and footers.</span><span data-lang="pl">Po kliknięciu przycisku rozszerzenie odczytuje tekst strony, pomijając menu, nagłówki i stopki.</span></p></li>
+                            <li class="step"><span class="step-number">03</span><p><span data-lang="en">The text is sent to a language model through the Groq API.</span><span data-lang="pl">Tekst trafia do modelu językowego przez Groq API.</span></p></li>
+                            <li class="step"><span class="step-number">04</span><p><span data-lang="en">The summary appears in the extension window.</span><span data-lang="pl">Podsumowanie pojawia się w okienku rozszerzenia.</span></p></li>
+                        </ol>
+                    </div>
+                </article>
+
+                <div class="more reveal">
+                    <div class="more-icon"><i data-lucide="folder-git-2" class="icon icon-large"></i></div>
+                    <div class="more-text">
+                        <h3><span data-lang="en">More projects on the way</span><span data-lang="pl">Kolejne projekty w drodze</span></h3>
+                        <p>
+                            <span data-lang="en">I'm working on new projects. In the meantime, my GitHub has university assignments and smaller experiments.</span>
+                            <span data-lang="pl">Pracuję nad nowymi projektami. W międzyczasie na moim GitHubie znajdziesz zadania ze studiów i mniejsze eksperymenty.</span>
+                        </p>
+                    </div>
+                    <a href="https://github.com/illusan" target="_blank" rel="noreferrer" class="button button-outline button-small">
+                        <i class="fa-brands fa-github"></i>
+                        <span data-lang="en">Visit my GitHub</span><span data-lang="pl">Zobacz mój GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== KONTAKT ===== -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="section-label">## <span data-lang="en">contact</span><span data-lang="pl">kontakt</span></p>
+                    <h2><span data-lang="en">Let's work together</span><span data-lang="pl">Porozmawiajmy</span></h2>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="reveal">
+                        <p class="contact-text">
+                            <span data-lang="en">I'm looking for an internship or a job on a contract of mandate (umowa zlecenie). If you have a proposal or a question, write to me. I usually reply within a day.</span>
+                            <span data-lang="pl">Szukam stażu lub pracy na umowę zlecenie. Jeśli masz dla mnie propozycję albo pytanie, napisz. Zwykle odpowiadam w ciągu doby.</span>
+                        </p>
+
+                        <div class="contact-actions">
+                            <a href="mailto:kubek.serafin@gmail.com" class="button button-primary magnetic">
+                                <i data-lucide="mail" class="icon"></i>
+                                <span data-lang="en">Send an email</span><span data-lang="pl">Wyślij e-mail</span>
+                            </a>
+                            <button type="button" class="button button-outline copy-button" id="copyButton" data-email="kubek.serafin@gmail.com">
+                                <i data-lucide="copy" class="icon copy-icon"></i>
+                                <i data-lucide="check" class="icon check-icon"></i>
+                                <span class="copy-text" aria-live="polite">
+                                    <span class="copy-label"><span data-lang="en">Copy email address</span><span data-lang="pl">Skopiuj adres e-mail</span></span>
+                                    <span class="copied-label"><span data-lang="en">Copied!</span><span data-lang="pl">Skopiowano!</span></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <ul class="channels reveal">
+                        <li>
+                            <a href="mailto:kubek.serafin@gmail.com" class="channel">
+                                <span class="channel-icon"><i data-lucide="mail" class="icon"></i></span>
+                                <span class="channel-text">
+                                    <span class="channel-label">Email</span>
+                                    <span class="channel-value">kubek.serafin@gmail.com</span>
+                                </span>
+                                <i data-lucide="arrow-up-right" class="icon channel-arrow"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/jakub-serafin-7503413b1/" target="_blank" rel="noreferrer" class="channel">
+                                <span class="channel-icon"><i class="fa-brands fa-linkedin"></i></span>
+                                <span class="channel-text">
+                                    <span class="channel-label">LinkedIn</span>
+                                    <span class="channel-value">Jakub Serafin</span>
+                                </span>
+                                <i data-lucide="arrow-up-right" class="icon channel-arrow"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/illusan" target="_blank" rel="noreferrer" class="channel">
+                                <span class="channel-icon"><i class="fa-brands fa-github"></i></span>
+                                <span class="channel-text">
+                                    <span class="channel-label">GitHub</span>
+                                    <span class="channel-value">@illusan</span>
+                                </span>
+                                <i data-lucide="arrow-up-right" class="icon channel-arrow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© <span id="year">2026</span> Jakub Serafin</p>
+        </div>
+    </footer>
+
+    <!-- Ikony Lucide (koperta, strzałki, puchar...) -->
+    <script src="https://unpkg.com/lucide@1.61.0/dist/umd/lucide.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
