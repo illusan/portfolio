@@ -107,21 +107,34 @@ function moveSliders() {
     });
 }
 
-// Sekcja jest aktywna, gdy przecina pas na wysokości ok. 40% ekranu
-const sectionObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-            activeId = entry.target.id;
-            moveSliders();
+// Aktywna jest ostatnia sekcja, której początek minął 40% wysokości ekranu.
+// Na samym dole strony zawsze aktywny jest kontakt – na wysokich ekranach nie da się go przewinąć wyżej.
+function updateActiveSection() {
+    let current = sections[0].id;
+
+    sections.forEach(function (section) {
+        if (section.getBoundingClientRect().top <= window.innerHeight * 0.4) {
+            current = section.id;
         }
     });
-}, { rootMargin: '-40% 0px -55% 0px' });
 
-sections.forEach(function (section) {
-    sectionObserver.observe(section);
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    if (atBottom) {
+        current = sections[sections.length - 1].id;
+    }
+
+    if (current !== activeId) {
+        activeId = current;
+        moveSliders();
+    }
+}
+
+window.addEventListener('scroll', updateActiveSection);
+
+window.addEventListener('resize', function () {
+    updateActiveSection();
+    moveSliders();
 });
-
-window.addEventListener('resize', moveSliders);
 // po załadowaniu czcionek linki mogą mieć inną szerokość
 document.fonts.ready.then(moveSliders);
 
@@ -180,4 +193,5 @@ copyButton.addEventListener('click', function () {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 setLanguage(document.documentElement.lang);
+updateActiveSection();
 moveSliders();
