@@ -132,48 +132,6 @@ html[lang="pl"] .nav-label [data-lang="en"] {
     top: 16px;
 }
 
-.progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 60;
-    height: 2px;
-    width: 0%;
-    background: var(--accent);
-}
-
-.background {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-/* Delikatna kratka, wygaszona ku dołowi */
-.background-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(to right, rgba(122, 167, 218, 0.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(122, 167, 218, 0.06) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
-}
-
-.background-glow {
-    position: absolute;
-    top: -160px;
-    left: 50%;
-    width: 900px;
-    height: 480px;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    background: var(--accent-soft);
-    filter: blur(120px);
-}
-
 /* ===== NAGŁÓWEK I MENU ===== */
 .header {
     position: fixed;
@@ -349,15 +307,16 @@ html[lang="pl"] .lang-button[data-set-lang="pl"] {
     background: var(--accent-soft);
 }
 
+/* Ikony Phosphor to znaki z czcionki, więc ich rozmiar ustawia font-size */
 .icon {
-    width: 16px;
-    height: 16px;
+    display: inline-block;
     flex-shrink: 0;
+    font-size: 16px;
+    line-height: 1;
 }
 
 .icon-large {
-    width: 24px;
-    height: 24px;
+    font-size: 24px;
 }
 
 .icon-muted {
@@ -466,11 +425,12 @@ html[lang="pl"] .lang-button[data-set-lang="pl"] {
 }
 
 /* ===== START ===== */
+/* Wysokość ekranu, ale najwyżej 900px – po oddaleniu strony (Ctrl + scroll) nie robi się wielka pusta przestrzeń */
 .hero {
     display: flex;
     align-items: center;
-    min-height: 100vh;
-    min-height: 100svh;
+    min-height: min(100vh, 900px);
+    min-height: min(100svh, 900px);
     padding: 96px 0 112px;
 }
 
@@ -498,20 +458,6 @@ html[lang="pl"] .lang-button[data-set-lang="pl"] {
     object-fit: cover;
 }
 
-.status {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 24px;
-    padding: 6px 14px;
-    border: 1px solid rgba(95, 211, 154, 0.25);
-    border-radius: 999px;
-    background: rgba(95, 211, 154, 0.1);
-    color: var(--success);
-    font-size: 12px;
-    font-weight: 500;
-}
-
 h1 {
     font-size: 36px;
     font-weight: 600;
@@ -528,10 +474,6 @@ h1 {
 .name {
     display: block;
     margin-top: 8px;
-    background: linear-gradient(to right, var(--text), var(--text), var(--accent-strong));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
 }
 
 .build {
@@ -700,7 +642,6 @@ h2 {
     background: rgba(255, 255, 255, 0.04);
 }
 
-.fact-icon,
 .channel-icon,
 .more-icon {
     display: flex;
@@ -712,15 +653,16 @@ h2 {
     color: var(--accent);
 }
 
+/* W „W skrócie” same dwutonowe ikony, bez kwadratowych ramek */
 .fact-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
+    flex-shrink: 0;
+    width: 32px;
+    padding-top: 2px;
+    color: var(--accent);
 }
 
 .fact-icon .icon {
-    width: 20px;
-    height: 20px;
+    font-size: 28px;
 }
 
 .fact-label,
@@ -763,7 +705,7 @@ h2 {
     gap: 16px;
     padding: 40px 24px;
     border-bottom: 1px solid var(--line);
-    background: linear-gradient(135deg, rgba(122, 167, 218, 0.15), transparent 60%);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .shot {
@@ -983,9 +925,12 @@ h2 {
     display: none;
 }
 
-.copy-button.copied .check-icon,
 .copy-button.copied .copied-label {
     display: inline;
+}
+
+.copy-button.copied .check-icon {
+    display: inline-block;
 }
 
 .copy-button .check-icon {
@@ -1011,7 +956,6 @@ h2 {
 .channel-icon .icon,
 .channel-icon .fa-brands {
     width: 20px;
-    height: 20px;
     font-size: 20px;
     line-height: 20px;
     text-align: center;
@@ -1040,8 +984,7 @@ h2 {
 }
 
 .channel-arrow {
-    width: 20px;
-    height: 20px;
+    font-size: 20px;
     color: var(--subtle);
     transition: color 0.2s, transform 0.2s;
 }
@@ -1068,10 +1011,6 @@ h2 {
 
     .hero-photo {
         max-width: 280px;
-    }
-
-    .status {
-        font-size: 14px;
     }
 
     h1 {

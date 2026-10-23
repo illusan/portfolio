@@ -1,6 +1,3 @@
-// Zamienia <i data-lucide="..."> na ikonki z biblioteki Lucide
-lucide.createIcons();
-
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 
@@ -81,17 +78,6 @@ function showNextWord() {
 }
 
 setInterval(showNextWord, 2600);
-
-
-// ===== PASEK POSTĘPU =====
-
-const progressBar = document.getElementById('progressBar');
-
-window.addEventListener('scroll', function () {
-    const scrolled = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    progressBar.style.width = (scrolled / height) * 100 + '%';
-});
 
 
 // ===== AKTYWNA SEKCJA W MENU =====

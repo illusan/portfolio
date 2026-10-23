@@ -21,6 +21,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css">
 
+    <!-- Pozostałe ikony z Phosphor Icons: <i class="ph ph-nazwa"> (zwykłe) i <i class="ph-duotone ph-nazwa"> (dwutonowe) -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+
     <link rel="stylesheet" href="style.css">
 
     <!-- Ustawia język od razu, żeby strona nie mignęła po angielsku, gdy ktoś wybrał polski -->
@@ -36,13 +40,6 @@
     <a href="#main" class="skip-link">
         <span data-lang="en">Skip to content</span><span data-lang="pl">Przejdź do treści</span>
     </a>
-
-    <div class="progress-bar" id="progressBar"></div>
-
-    <div class="background" aria-hidden="true">
-        <div class="background-grid"></div>
-        <div class="background-glow"></div>
-    </div>
 
     <!-- ===== NAGŁÓWEK ===== -->
     <header class="header">
@@ -79,36 +76,30 @@
         <section id="start" class="hero">
             <div class="container hero-grid">
                 <div class="hero-text">
-                    <p class="status enter" style="--delay: 100ms">
-                        <span class="status-dot" aria-hidden="true"></span>
-                        <span data-lang="en">Open to internships &amp; contract work</span>
-                        <span data-lang="pl">Szukam stażu lub pracy na umowę zlecenie</span>
-                    </p>
-
-                    <h1 class="enter" style="--delay: 200ms">
+                    <h1 class="enter" style="--delay: 100ms">
                         <span class="hello"><span data-lang="en">Hi, I'm</span><span data-lang="pl">Cześć, jestem</span></span>
                         <span class="name">Jakub Serafin</span>
                     </h1>
 
-                    <p class="build enter" style="--delay: 320ms">
+                    <p class="build enter" style="--delay: 220ms">
                         <span data-lang="en">I build</span><span data-lang="pl">Tworzę</span>
                         <span class="rotating" id="rotatingText"
                               data-words-en="web applications|booking systems|Python tools|responsive interfaces"
                               data-words-pl="aplikacje webowe|systemy rezerwacji|narzędzia w Pythonie|responsywne interfejsy">web applications</span>
                     </p>
 
-                    <p class="lead enter" style="--delay: 440ms">
-                        <span data-lang="en">Second-year Applied Computer Science student at Jagiellonian University in Kraków. Curious about new things, eager to learn and happy to work with others.</span>
-                        <span data-lang="pl">Student drugiego roku Informatyki Stosowanej na Uniwersytecie Jagiellońskim w Krakowie. Ciekawy nowych rzeczy, chętny do nauki i do współpracy.</span>
+                    <p class="lead enter" style="--delay: 340ms">
+                        <span data-lang="en">Second-year Applied Computer Science student at Jagiellonian University in Kraków. I'm looking for an internship or contract work. Curious about new things, eager to learn and happy to work with others.</span>
+                        <span data-lang="pl">Student drugiego roku Informatyki Stosowanej na Uniwersytecie Jagiellońskim w Krakowie. Szukam stażu lub pracy na umowę zlecenie. Jestem ciekawy nowych rzeczy, chętny do nauki i do współpracy.</span>
                     </p>
 
-                    <div class="hero-actions enter" style="--delay: 560ms">
+                    <div class="hero-actions enter" style="--delay: 460ms">
                         <a href="#projects" class="button button-primary magnetic">
                             <span data-lang="en">View projects</span><span data-lang="pl">Zobacz projekty</span>
-                            <i data-lucide="arrow-right" class="icon icon-move"></i>
+                            <i class="ph ph-arrow-right icon icon-move"></i>
                         </a>
                         <a href="#contact" class="button button-outline">
-                            <i data-lucide="mail" class="icon"></i>
+                            <i class="ph ph-envelope-simple icon"></i>
                             <span data-lang="en">Get in touch</span><span data-lang="pl">Napisz do mnie</span>
                         </a>
                         <div class="socials">
@@ -118,7 +109,7 @@
                     </div>
                 </div>
 
-                <div class="hero-photo enter" style="--delay: 300ms">
+                <div class="hero-photo enter" style="--delay: 200ms">
                     <img src="assets/jakub-serafin.webp" width="800" height="800" fetchpriority="high"
                          alt="Portrait of Jakub Serafin"
                          data-alt-en="Portrait of Jakub Serafin"
@@ -156,7 +147,7 @@
                         <h3 class="small-title"><span data-lang="en">Skills</span><span data-lang="pl">Umiejętności</span></h3>
                         <ul class="skills">
                             <li class="skill skill-python"><i class="fa-brands fa-python"></i>Python</li>
-                            <li class="skill skill-sql"><i data-lucide="database" class="icon"></i>SQL</li>
+                            <li class="skill skill-sql"><i class="ph ph-database icon"></i>SQL</li>
                             <li class="skill skill-html"><i class="fa-brands fa-html5"></i>HTML</li>
                             <li class="skill skill-css"><i class="fa-brands fa-css3-alt"></i>CSS</li>
                         </ul>
@@ -165,7 +156,7 @@
                     <div class="facts reveal">
                         <h3 class="visually-hidden"><span data-lang="en">Quick facts</span><span data-lang="pl">W skrócie</span></h3>
                         <div class="fact">
-                            <div class="fact-icon"><i data-lucide="graduation-cap" class="icon"></i></div>
+                            <div class="fact-icon"><i class="ph-duotone ph-graduation-cap icon"></i></div>
                             <div>
                                 <p class="fact-label"><span data-lang="en">Education</span><span data-lang="pl">Edukacja</span></p>
                                 <p class="fact-value"><span data-lang="en">Applied Computer Science, Jagiellonian University</span><span data-lang="pl">Informatyka Stosowana, Uniwersytet Jagielloński</span></p>
@@ -173,7 +164,7 @@
                             </div>
                         </div>
                         <div class="fact">
-                            <div class="fact-icon"><i data-lucide="award" class="icon"></i></div>
+                            <div class="fact-icon"><i class="ph-duotone ph-certificate icon"></i></div>
                             <div>
                                 <p class="fact-label"><span data-lang="en">Qualification</span><span data-lang="pl">Kwalifikacje</span></p>
                                 <p class="fact-value"><span data-lang="en">IT technician – programmer</span><span data-lang="pl">Technik programista</span></p>
@@ -181,7 +172,7 @@
                             </div>
                         </div>
                         <div class="fact">
-                            <div class="fact-icon"><i data-lucide="trophy" class="icon"></i></div>
+                            <div class="fact-icon"><i class="ph-duotone ph-medal icon"></i></div>
                             <div>
                                 <p class="fact-label"><span data-lang="en">Award</span><span data-lang="pl">Wyróżnienie</span></p>
                                 <p class="fact-value"><span data-lang="en">Young Innovator in IT and telecommunications</span><span data-lang="pl">Młody Innowator w dziedzinie informatyki i telekomunikacji</span></p>
@@ -189,7 +180,7 @@
                             </div>
                         </div>
                         <div class="fact">
-                            <div class="fact-icon"><i data-lucide="languages" class="icon"></i></div>
+                            <div class="fact-icon"><i class="ph-duotone ph-translate icon"></i></div>
                             <div>
                                 <p class="fact-label"><span data-lang="en">Languages</span><span data-lang="pl">Języki</span></p>
                                 <p class="fact-value"><span data-lang="en">Polish – native</span><span data-lang="pl">Polski – ojczysty</span></p>
@@ -197,7 +188,7 @@
                             </div>
                         </div>
                         <div class="fact">
-                            <div class="fact-icon"><i data-lucide="map-pin" class="icon"></i></div>
+                            <div class="fact-icon"><i class="ph-duotone ph-map-pin icon"></i></div>
                             <div>
                                 <p class="fact-label"><span data-lang="en">Location</span><span data-lang="pl">Lokalizacja</span></p>
                                 <p class="fact-value"><span data-lang="en">Kraków, Poland</span><span data-lang="pl">Kraków</span></p>
@@ -351,7 +342,7 @@
                                 <a href="https://github.com/illusan/AI-Opinion-Reviewer" target="_blank" rel="noreferrer" class="button button-outline button-small">
                                     <i class="fa-brands fa-github"></i>
                                     <span data-lang="en">View code on GitHub</span><span data-lang="pl">Zobacz kod na GitHubie</span>
-                                    <i data-lucide="arrow-up-right" class="icon icon-muted icon-move-up"></i>
+                                    <i class="ph ph-arrow-up-right icon icon-muted icon-move-up"></i>
                                 </a>
                             </div>
                         </div>
@@ -369,7 +360,7 @@
                 </article>
 
                 <div class="more reveal">
-                    <div class="more-icon"><i data-lucide="folder-git-2" class="icon icon-large"></i></div>
+                    <div class="more-icon"><i class="ph-duotone ph-git-branch icon icon-large"></i></div>
                     <div class="more-text">
                         <h3><span data-lang="en">More projects on the way</span><span data-lang="pl">Kolejne projekty w drodze</span></h3>
                         <p>
@@ -402,12 +393,12 @@
 
                         <div class="contact-actions">
                             <a href="mailto:kubek.serafin@gmail.com" class="button button-primary magnetic">
-                                <i data-lucide="mail" class="icon"></i>
+                                <i class="ph ph-envelope-simple icon"></i>
                                 <span data-lang="en">Send an email</span><span data-lang="pl">Wyślij e-mail</span>
                             </a>
                             <button type="button" class="button button-outline copy-button" id="copyButton" data-email="kubek.serafin@gmail.com">
-                                <i data-lucide="copy" class="icon copy-icon"></i>
-                                <i data-lucide="check" class="icon check-icon"></i>
+                                <i class="ph ph-copy icon copy-icon"></i>
+                                <i class="ph ph-check icon check-icon"></i>
                                 <span class="copy-text" aria-live="polite">
                                     <span class="copy-label"><span data-lang="en">Copy email address</span><span data-lang="pl">Skopiuj adres e-mail</span></span>
                                     <span class="copied-label"><span data-lang="en">Copied!</span><span data-lang="pl">Skopiowano!</span></span>
@@ -419,12 +410,12 @@
                     <ul class="channels reveal">
                         <li>
                             <a href="mailto:kubek.serafin@gmail.com" class="channel">
-                                <span class="channel-icon"><i data-lucide="mail" class="icon"></i></span>
+                                <span class="channel-icon"><i class="ph ph-envelope-simple icon"></i></span>
                                 <span class="channel-text">
                                     <span class="channel-label">Email</span>
                                     <span class="channel-value">kubek.serafin@gmail.com</span>
                                 </span>
-                                <i data-lucide="arrow-up-right" class="icon channel-arrow"></i>
+                                <i class="ph ph-arrow-up-right icon channel-arrow"></i>
                             </a>
                         </li>
                         <li>
@@ -434,7 +425,7 @@
                                     <span class="channel-label">LinkedIn</span>
                                     <span class="channel-value">Jakub Serafin</span>
                                 </span>
-                                <i data-lucide="arrow-up-right" class="icon channel-arrow"></i>
+                                <i class="ph ph-arrow-up-right icon channel-arrow"></i>
                             </a>
                         </li>
                         <li>
@@ -444,7 +435,7 @@
                                     <span class="channel-label">GitHub</span>
                                     <span class="channel-value">@illusan</span>
                                 </span>
-                                <i data-lucide="arrow-up-right" class="icon channel-arrow"></i>
+                                <i class="ph ph-arrow-up-right icon channel-arrow"></i>
                             </a>
                         </li>
                     </ul>
@@ -459,8 +450,6 @@
         </div>
     </footer>
 
-    <!-- Ikony Lucide (koperta, strzałki, puchar...) -->
-    <script src="https://unpkg.com/lucide@1.61.0/dist/umd/lucide.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

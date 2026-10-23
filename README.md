@@ -7,7 +7,7 @@ Personal portfolio of Jakub Serafin, Applied Computer Science student at Jagiell
 ## Built with
 
 - HTML, CSS and JavaScript (no frameworks, no build step)
-- Icons: [Lucide](https://lucide.dev) and [Font Awesome](https://fontawesome.com)
+- Icons: [Phosphor Icons](https://phosphoricons.com) and [Font Awesome](https://fontawesome.com)
 - Fonts: Inter and JetBrains Mono (Google Fonts)
 - English / Polish language switch
 
